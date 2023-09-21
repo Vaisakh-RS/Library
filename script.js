@@ -28,3 +28,4 @@ for(let i=0;i<myLibrary.length;i++)
     newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].readOrNot;
     booksDiv.appendChild(newDiv);
 }
+
