@@ -1,3 +1,12 @@
+const showDialogButton=document.getElementById("showBookDialog");
+
+
+showDialogButton.addEventListener("click",()=>{
+    bookDialog.showModal();
+});
+
+
+
 const myLibrary=[];
 
 //constructor
