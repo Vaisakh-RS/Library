@@ -1,11 +1,19 @@
 const showDialogButton=document.getElementById("showBookDialog");
-
+const submitButton=document.getElementById("submitButton");
 
 showDialogButton.addEventListener("click",()=>{
     bookDialog.showModal();
 });
 
-
+submitButton.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let isbn=document.getElementById("isbn").value;
+    let bookName=document.getElementById("name").value;
+    let author=document.getElementById("authorName").value;
+    let readOrNot=document.getElementById("read").value;
+    addBook(isbn,bookName,author,readOrNot);
+    console.log(myLibrary);
+});
 
 const myLibrary=[];
 
@@ -24,9 +32,6 @@ function addBook(number,name,author,readOrNot){
    myLibrary.push(book);
    return myLibrary
 }
-
-// addBook(20,"a","b",true);
-// addBook(40,"c","d",true);
 
 const booksDiv=document.getElementsByClassName("books")[0];
 
