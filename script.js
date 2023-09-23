@@ -6,7 +6,7 @@ showDialogButton.addEventListener("click",()=>{
 });
 
 submitButton.addEventListener("click",(e)=>{
-    e.preventDefault();
+    e.preventDefault(); //so that the form doesn't get submitted
     let isbn=document.getElementById("isbn").value;
     let bookName=document.getElementById("name").value;
     let author=document.getElementById("authorName").value;
