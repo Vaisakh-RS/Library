@@ -27,8 +27,8 @@
 }
 
 #bookDialog{
-    display: flex;
     padding: 60px;
     width: 200px;
     margin: auto;
-}
+} 
+

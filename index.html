@@ -14,7 +14,7 @@
     </div>
     <div class="formDiv">
         <dialog id="bookDialog">
-            <form action="#" id="bookForm">
+            <form method="dialog" id="bookForm">
                 <label for="isbn">ISBN</label>
                 <input type="number" name="number" id="isbn">
                 <label for="name">Name</label>
@@ -25,8 +25,8 @@
                 <label for="read">Read</label>
                 <input type="radio" name="read" id="notread">
                 <label for="read">Not Read</label>
-                <button type="submit" id="submitButton">Submit</button>
-                <button formmethod="dialog">Cancel</button> <!--formethod will help to close the dialog-->
+                <button type="submit" id="submitButton" formmethod="dialog">Submit</button>
+                <button  id="closeButton">Cancel</button>
             </form>
         </dialog>
     </div>

@@ -1,9 +1,12 @@
 const showDialogButton=document.getElementById("showBookDialog");
 const submitButton=document.getElementById("submitButton");
+const closeButton=document.getElementById("closeButton");
+const bookDialog =document.getElementById("bookDialog");
 
 showDialogButton.addEventListener("click",()=>{
     bookDialog.showModal();
 });
+
 
 submitButton.addEventListener("click",(e)=>{
     e.preventDefault(); //so that the form doesn't get submitted
@@ -13,6 +16,7 @@ submitButton.addEventListener("click",(e)=>{
     let readOrNot=document.getElementById("read").value;
     addBook(isbn,bookName,author,readOrNot);
     console.log(myLibrary);
+    bookDialog.close();
 });
 
 const myLibrary=[];
