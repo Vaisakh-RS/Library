@@ -13,8 +13,8 @@ submitButton.addEventListener("click",(e)=>{
     let isbn=document.getElementById("isbn").value;
     let bookName=document.getElementById("name").value;
     let author=document.getElementById("authorName").value;
-    let readOrNot=document.getElementById("read").value;
-    addBook(isbn,bookName,author,readOrNot);
+    let readOrNot=document.getElementById("year").value;
+    addBook(isbn,bookName,author,year);
     console.log(myLibrary);
     bookDialog.close();
 });
@@ -22,17 +22,17 @@ submitButton.addEventListener("click",(e)=>{
 const myLibrary=[];
 
 //constructor
-function Book(number,name,author,readOrNot){
+function Book(number,name,author,year){
     this.number=number;
     this.name=name;
     this.author=author;
-    this.readOrNot=readOrNot;
+    this.year=year;
 
 };
 
 //adds newly created book into the myLibrary array
-function addBook(number,name,author,readOrNot){
-   const book=new Book(number,name,author,readOrNot);
+function addBook(number,name,author,year){
+   const book=new Book(number,name,author,year);
    myLibrary.push(book);
    return myLibrary
 }
@@ -43,7 +43,7 @@ for(let i=0;i<myLibrary.length;i++)
 {
     console.log(myLibrary[i]);
     let newDiv=document.createElement("div");
-    newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].readOrNot;
+    newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].year;
     booksDiv.appendChild(newDiv);
 }
 
