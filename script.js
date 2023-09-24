@@ -13,10 +13,11 @@ submitButton.addEventListener("click",(e)=>{
     let isbn=document.getElementById("isbn").value;
     let bookName=document.getElementById("name").value;
     let author=document.getElementById("authorName").value;
-    let readOrNot=document.getElementById("year").value;
+    let year=document.getElementById("year").value;
     addBook(isbn,bookName,author,year);
     console.log(myLibrary);
     bookDialog.close();
+    displayBooks();
 });
 
 const myLibrary=[];
@@ -39,11 +40,18 @@ function addBook(number,name,author,year){
 
 const booksDiv=document.getElementsByClassName("books")[0];
 
-for(let i=0;i<myLibrary.length;i++)
+function displayBooks()
 {
-    console.log(myLibrary[i]);
-    let newDiv=document.createElement("div");
-    newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].year;
-    booksDiv.appendChild(newDiv);
+    booksDiv.innerHTML=" ";
+    for(let i=0;i<myLibrary.length;i++)
+    {  
+        let newDiv=document.createElement("div");
+        newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].year;
+        booksDiv.appendChild(newDiv);
+       
+    }
+   
+
 }
+
 
