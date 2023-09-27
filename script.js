@@ -47,7 +47,13 @@ function displayBooks()
     {  
         let newDiv=document.createElement("div");
         newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].year;
+        // newDiv.style.width="300px";
+        // newDiv.style.height="250px";
+        newDiv.style.border="1px solid black";
+        newDiv.style.padding="40px";
+        
         booksDiv.appendChild(newDiv);
+        
        
     }
    
