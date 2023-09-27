@@ -31,6 +31,15 @@ function Book(number,name,author,year){
 
 };
 
+function toggleReadStatus(divElement){
+    const readStatus=divElement.querySelector(".read-status");
+    if (readStatus.textContent === "Read") {
+        readStatus.textContent = "Not Read";
+    } else {
+        readStatus.textContent = "Read";
+    }
+}
+
 //adds newly created book into the myLibrary array
 function addBook(number,name,author,year){
    const book=new Book(number,name,author,year);
