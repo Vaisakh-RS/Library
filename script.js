@@ -48,9 +48,30 @@ function addBook(number,name,author,year){
    return myLibrary
 }
 
+function deleteBook(button)
+{
+    const div = button.closest('.newBook');
+    const divs=document.querySelectorAll(".newBook");
 
+    const index = Array.from(divs).indexOf(div);
+    myLibrary.splice(index,1);
+    div.remove();
+}
 
 const booksDiv=document.getElementsByClassName("books")[0];
+
+
+function addStyles(newDiv)
+{
+    newDiv.style.padding="60px";
+    newDiv.style.width="200px";
+    newDiv.style.margin="30px";
+    newDiv.style.borderRadius="5px";
+    newDiv.style.boxShadow="rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
+    newDiv.style.display="flex";
+    newDiv.style.flexDirection="column";
+    newDiv.style.fontSize="16px";
+}
 
 function displayBooks()
 {
@@ -58,6 +79,8 @@ function displayBooks()
     for(let i=0;i<myLibrary.length;i++)
     {  
         let newDiv=document.createElement("div");
+        newDiv.classList.add("newBook");
+
         let numberParagraph = document.createElement("p");
         numberParagraph.textContent = "Number: " + myLibrary[i].number;
 
@@ -78,7 +101,7 @@ function displayBooks()
 
         const toggleButton = document.createElement("button");
         toggleButton.textContent = "Toggle Read Status";
-        toggleButton.addEventListener("click", () => toggleReadStatus(newDiv));
+        toggleButton.addEventListener("click", () => toggleReadStatus(this));
         toggleButton.style.width="120px";
         newDiv.appendChild(toggleButton);
 
@@ -94,14 +117,7 @@ function displayBooks()
         deleteButton.style.width="120px";
         newDiv.appendChild(deleteButton);
 
-        newDiv.style.padding="60px";
-        newDiv.style.width="200px";
-        newDiv.style.margin="30px";
-        newDiv.style.borderRadius="5px";
-        newDiv.style.boxShadow="rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
-        newDiv.style.display="flex";
-        newDiv.style.flexDirection="column";
-        newDiv.style.fontSize="16px";
+        
 
 
         booksDiv.appendChild(newDiv);
