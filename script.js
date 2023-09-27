@@ -31,6 +31,7 @@ function Book(number,name,author,year){
 
 };
 
+//to toggle read status
 function toggleReadStatus(divElement){
     const readStatus=divElement.querySelector(".read-status");
     if (readStatus.textContent === "Read") {
@@ -46,6 +47,8 @@ function addBook(number,name,author,year){
    myLibrary.push(book);
    return myLibrary
 }
+
+
 
 const booksDiv=document.getElementsByClassName("books")[0];
 
@@ -71,7 +74,27 @@ function displayBooks()
         newDiv.appendChild(authorParagraph);
         newDiv.appendChild(yearParagraph);
 
-        newDiv.style.padding="40px";
+        //Toggle for read status
+
+        const toggleButton = document.createElement("button");
+        toggleButton.textContent = "Toggle Read Status";
+        toggleButton.addEventListener("click", () => toggleReadStatus(newDiv));
+        toggleButton.style.width="120px";
+        newDiv.appendChild(toggleButton);
+
+        const readStatus = document.createElement("p");
+        readStatus.classList.add("read-status");
+        readStatus.textContent = "Not Read";
+        newDiv.appendChild(readStatus);
+
+        //to delete a card
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => deleteBook(newDiv));
+        deleteButton.style.width="120px";
+        newDiv.appendChild(deleteButton);
+
+        newDiv.style.padding="60px";
         newDiv.style.width="200px";
         newDiv.style.margin="30px";
         newDiv.style.borderRadius="5px";
