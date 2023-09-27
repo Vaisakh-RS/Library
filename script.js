@@ -46,12 +46,32 @@ function displayBooks()
     for(let i=0;i<myLibrary.length;i++)
     {  
         let newDiv=document.createElement("div");
-        newDiv.textContent=myLibrary[i].number+" "+myLibrary[i].name+" "+myLibrary[i].author+" "+myLibrary[i].year;
-        // newDiv.style.width="300px";
-        // newDiv.style.height="250px";
-        newDiv.style.border="1px solid black";
+        let numberParagraph = document.createElement("p");
+        numberParagraph.textContent = "Number: " + myLibrary[i].number;
+
+        let nameParagraph = document.createElement("p");
+        nameParagraph.textContent = "Name: " + myLibrary[i].name;
+
+        let authorParagraph = document.createElement("p");
+        authorParagraph.textContent = "Author: " + myLibrary[i].author;
+
+        let yearParagraph = document.createElement("p");
+        yearParagraph.textContent = "Year: " + myLibrary[i].year;
+        newDiv.appendChild(numberParagraph);
+        newDiv.appendChild(nameParagraph);
+        newDiv.appendChild(authorParagraph);
+        newDiv.appendChild(yearParagraph);
+
         newDiv.style.padding="40px";
-        
+        newDiv.style.width="200px";
+        newDiv.style.margin="30px";
+        newDiv.style.borderRadius="5px";
+        newDiv.style.boxShadow="rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
+        newDiv.style.display="flex";
+        newDiv.style.flexDirection="column";
+        newDiv.style.fontSize="16px";
+
+
         booksDiv.appendChild(newDiv);
         
        
