@@ -117,9 +117,7 @@ function displayBooks()
         deleteButton.style.width="120px";
         newDiv.appendChild(deleteButton);
 
-        
-
-
+        addStyles(newDiv);
         booksDiv.appendChild(newDiv);
         
        
