@@ -15,7 +15,7 @@ submitButton.addEventListener("click",(e)=>{
     let author=document.getElementById("authorName").value;
     let year=document.getElementById("year").value;
     addBook(isbn,bookName,author,year);
-    console.log(myLibrary);
+    //console.log(myLibrary);
     bookDialog.close();
     displayBooks();
 });
@@ -50,9 +50,8 @@ function addBook(number,name,author,year){
 
 function deleteBook(button)
 {
-    const div = button.closest('.newBook');
     const divs=document.querySelectorAll(".newBook");
-
+    const div = button.closest('.newBook');
     const index = Array.from(divs).indexOf(div);
     myLibrary.splice(index,1);
     div.remove();
@@ -92,13 +91,13 @@ function displayBooks()
 
         let yearParagraph = document.createElement("p");
         yearParagraph.textContent = "Year: " + myLibrary[i].year;
+
         newDiv.appendChild(numberParagraph);
         newDiv.appendChild(nameParagraph);
         newDiv.appendChild(authorParagraph);
         newDiv.appendChild(yearParagraph);
 
         //Toggle for read status
-
         const toggleButton = document.createElement("button");
         toggleButton.textContent = "Toggle Read Status";
         toggleButton.addEventListener("click", () => toggleReadStatus(this));
